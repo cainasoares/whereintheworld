@@ -1,0 +1,125 @@
+.actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 45px 0 0 0;
+  .filters {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    .search {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      display: block;
+      button {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        top: 0;
+        width: 75px;
+        height: 55px;
+        border: none;
+        background: none;
+        color: #8b8b8b;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      input {
+        display: flex;
+        height: 55px;
+        width: 100%;
+        border-radius: 5px;
+        border: none;
+        color: #8b8b8b;
+        background: #FFF;
+        text-indent: 75px;
+        font-size: 14px;
+        box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.11);
+
+        &::placeholder {
+          color: #8b8b8b;
+        }
+      }
+    }
+    .region__filter {
+      width: fit-content;
+      display: block;
+      select {
+        cursor: pointer;
+        height: 55px;
+        width: 200px;
+        text-indent: 25px;
+        border-radius: 5px;
+        border: none;
+        color: #000;
+        background-color: #FFF;
+        appearance: none;
+        font-size: 14px;
+      }
+      
+    }
+  }
+}
+
+.countries {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 45px 0;
+  .countries__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    .country__block {
+      color: #000;
+      width: calc(25% - 55px);
+      flex-direction: column;
+      margin: 0 0 75px 0;
+      border-radius: 5px;
+      overflow: hidden;
+      background: #FFF;
+      box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.11);
+      .country__flag {
+        a {
+          position: relative;
+          display: block;
+          overflow: hidden;
+          height: 160px;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+      }
+      .country__details {
+        display: block;
+        padding: 30px 25px 50px 25px;
+        h2 {
+          font-size: 18px;
+          font-weight: 800;
+          display: block;
+          margin: 0 0 25px 0;
+        }
+        ul {
+          li {
+            font-size: 14px;
+            font-weight: 300;
+            margin: 0 0 15px 0;
+            line-height: 1;
+            &:last-child {
+              margin: 0;
+            }
+            strong {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
