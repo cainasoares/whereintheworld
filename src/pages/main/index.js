@@ -17,6 +17,9 @@ export default class Main extends Component {
     const response = await api.get();
 
     this.setState({ countries: response.data });
+
+    console.log(this.state);
+    
   };
 
   render() {

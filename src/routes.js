@@ -12,7 +12,7 @@ const Routes = () => (
 
 
       <Route path="/details/:name" component={Details} />
-      <Route path="/details:border" component={Details} />
+      <Route path="/details/:border" component={Details} />
 
 
     </Switch>

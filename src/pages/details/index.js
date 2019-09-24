@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import api from "../../services/api";
-import { Link } from "react-router-dom";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import "./styles.scss";
 
@@ -9,18 +8,34 @@ export default class Details extends Component {
   state = {
     details: {},
     border: {},
+    redirect: false,
   };
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
 
   async componentDidMount() {
     this.loadDetails();
   }
 
-  loadDetails = async (border) => {
+  loadDetails = async () => {
     const { name } = this.props.match.params;
 
-    const response = await api.get(`/name/${name}`);
+    let response;
+    let state;
 
-    this.setState({ details: response.data[0], border: response.data[0].borders });
+    if (name.length === 3) {
+      response = await api.get(`/alpha/${name}`);
+      state = { details: response.data, border: response.data.borders };      
+    } else {
+      response = await api.get(`/name/${name}`);
+      state = { details: response.data[0], border: response.data[0].borders };
+    } 
+
+    this.setState(state);
 
     console.log(this.state);
     
